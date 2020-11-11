@@ -1,0 +1,12 @@
+.row div {
+    padding: 10px;
+    border: 1px solid black;
+    height: 170px;
+    width: 170px;
+    float: left;
+}
+
+
+.row {
+    clear: both;
+}
