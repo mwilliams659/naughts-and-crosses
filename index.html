@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Noughts and Crosses</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Naughts and Crosses</h1>
+    <h1>The Naughts and Crosses Championships</h1>
     <div class="box">
         <div class="row">
-            <div onclick="place(this)"></div>
-            <div onclick="place(this)"></div>
-            <div onclick="place(this)"></div>
+            <!-- First Column -->
+            <div id="0" onclick="place(this)"></div>
+            <div id="1" onclick="place(this)"></div>
+            <div id="2" onclick="place(this)"></div>
         </div>
         <div class="row">
-            <div onclick="place(this)"></div>
-            <div onclick="place(this)"></div>
-            <div onclick="place(this)"></div>
+            <!-- Second Column -->
+            <div id="3" onclick="place(this)"></div>
+            <div id="4" onclick="place(this)"></div>
+            <div id="5" onclick="place(this)"></div>
         </div>
         <div class="row">
-            <div onclick="place(this)"></div>
-            <div onclick="place(this)"></div>
-            <div onclick="place(this)"></div>
+            <!-- Third Column -->
+            <div id="6" onclick="place(this)"></div>
+            <div id="7" onclick="place(this)"></div>
+            <div id="8" onclick="place(this)"></div>
+            <!-- <button id="reset-button">Reset Game</button> -->
         </div>
     </div>
     <script src="script.js"></script>
