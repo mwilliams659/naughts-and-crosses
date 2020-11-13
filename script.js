@@ -27,8 +27,55 @@ function place(box) {
     // update the board
     board[boxId] = currentPlayer;
     console.log(board);
-    // 0, 1, 2
-    if(board[0] != "Empty"){
+ 
+    checkWinner();
+    announceWinner();
+    // assign to other player for next turn
+    currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+
+};
+
+function announceWinner() {
+    if (winner === "X") {
+        setTimeout(function() {
+            alert("X is the winner!")
+            resetBoard();
+        }, 10);
+    }
+    if (winner === "O") {
+        setTimeout(function() {
+            alert("O is the winner!")
+            resetBoard();
+        }, 10);
+    }
+}
+
+function resetBoard() {
+    box = document.getElementById("0");
+    box.innerText = "";
+    box = document.getElementById("1");
+    box.innerText = "";
+    box = document.getElementById("2");
+    box.innerText = "";
+    box = document.getElementById("3");
+    box.innerText = "";
+    box = document.getElementById("4");
+    box.innerText = "";
+    box = document.getElementById("5");
+    box.innerText = "";
+    box = document.getElementById("6");
+    box.innerText = "";
+    box = document.getElementById("7");
+    box.innerText = "";
+    box = document.getElementById("8");
+    box.innerText = "";
+    winner = "None";
+    board = ["Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty"];
+}
+
+function checkWinner() {
+       // 0, 1, 2
+       if(board[0] != "Empty"){
         if((board[1] != "Empty") && (board[1] === board[0])){
             if((board[2] != "Empty") && (board[2] === board[1])){
                 winner = currentPlayer
@@ -99,29 +146,11 @@ function place(box) {
             }
         }
     }
-    
-    // assign to other player for next turn
-    currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
-
-    if (winner === "X") {
-        setTimeout(function() {
-            alert("X is the winner!")
-    }, 0);
-}
-    if (winner === "O") {
-        setTimeout(function() {
-            alert("O is the winner!")
-    }, 0);
 }
 
-}
-
-// function checkWinner() {
-//     if (box.innerText != "Empty") {
-
-//     }
+// function resetGame() {
+//     if(winner !=)
 // }
-
 
 
 // const winningCombinations = [
