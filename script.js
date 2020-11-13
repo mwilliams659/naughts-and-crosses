@@ -39,6 +39,7 @@ function announceWinner() {
     if (winner === "X") {
         document.getElementById("winnerOfGameHeaderX").style.display = "block"
         startConfetti();
+        document.getElementById("game").style.pointerEvents = "none";
         setTimeout(function() {
         resetBoard();
         }, 5000);
@@ -46,6 +47,7 @@ function announceWinner() {
     if (winner === "O") {
         document.getElementById("winnerOfGameHeaderO").style.display = "block"
         startConfetti();
+        document.getElementById("game").style.pointerEvents = "none";
         setTimeout(function() {
         resetBoard();
         }, 5000);
@@ -76,8 +78,12 @@ function resetBoard() {
     box.innerText = "";
     winner = "None";
     board = ["Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty"];
-    document.getElementById("winnerOfGameHeaderX").style.display = "none"
-    document.getElementById("winnerOfGameHeaderO").style.display = "none"
+    
+    // This hides the "X/O is the winner" header that appears when a player wins
+    document.getElementById("winnerOfGameHeaderX").style.display = "none";
+    document.getElementById("winnerOfGameHeaderO").style.display = "none";
+    document.getElementById("game").style.pointerEvents = "auto";
+
 }
 
 function checkWinner() {
