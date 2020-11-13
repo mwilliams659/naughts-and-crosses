@@ -24,37 +24,48 @@ function place(box) {
     // Box id turned into integer
     const boxId = parseInt(box.id) 
     box.innerText = currentPlayer;
-    // update the board
+    // updates the board
     board[boxId] = currentPlayer;
     console.log(board);
  
     checkWinner();
     announceWinner();
-    // assign to other player for next turn
+    // The next turn changes to the next player after first player plays
     currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
 
 };
 
 function announceWinner() {
     if (winner === "X") {
+        // Displays header showing the winner of the game
         document.getElementById("winnerOfGameHeaderX").style.display = "block"
+        // Starts the confetti
         startConfetti();
+        // Removes user interactivity on the board whilst the winner is announced
+        document.getElementById("game").style.pointerEvents = "none";
         setTimeout(function() {
+        // Resets the board after 5 seconds
         resetBoard();
         }, 5000);
     }
     if (winner === "O") {
+        // Displays header showing the winner of the game
         document.getElementById("winnerOfGameHeaderO").style.display = "block"
+        // Starts the confetti
         startConfetti();
+        // Removes user interactivity on the board whilst the winner is announced
+        document.getElementById("game").style.pointerEvents = "none";
         setTimeout(function() {
+        // Resets the board after 5 seconds
         resetBoard();
         }, 5000);
     }
 }
 
 
-
+// This removes all the innerHTML inputs that were used in the game and leaves the boxes blank
 function resetBoard() {
+    // Stops the confetti animation
     stopConfetti();
     box = document.getElementById("0");
     box.innerText = "";
@@ -76,8 +87,13 @@ function resetBoard() {
     box.innerText = "";
     winner = "None";
     board = ["Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty"];
-    document.getElementById("winnerOfGameHeaderX").style.display = "none"
-    document.getElementById("winnerOfGameHeaderO").style.display = "none"
+    
+    // This hides the "X/O is the winner" header that appears when a player wins
+    document.getElementById("winnerOfGameHeaderX").style.display = "none";
+    document.getElementById("winnerOfGameHeaderO").style.display = "none";
+    // Re-instates user interactivity on the board
+    document.getElementById("game").style.pointerEvents = "auto";
+
 }
 
 function checkWinner() {
@@ -154,10 +170,6 @@ function checkWinner() {
         }
     }
 }
-
-// function resetGame() {
-//     if(winner !=)
-// }
 
 
 // const winningCombinations = [
