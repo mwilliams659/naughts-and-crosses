@@ -3,6 +3,7 @@
 //     }
 
 
+
 // Original code for the function below - not going to use but helpful to see
 // When clicked, the box will display an X or an O
 // function place(box) {
@@ -16,8 +17,11 @@
 
 var currentPlayer = "O";
 // this is the state of play
-var board = ["Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty"]
-var winner = "None"
+var board = ["Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty"];
+var winner = "None";
+var scoreX = 0;
+var scoreO = 0;
+
 // This function lets user click the box but once clicked, it cannot be changed
 function place(box) {
     if(box.innerText != "") return;
@@ -29,7 +33,9 @@ function place(box) {
     console.log(board);
  
     checkWinner();
-    announceWinner();
+	announceWinner();
+	checkIfDraw();
+	
     // The next turn changes to the next player after first player plays
     currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
 
@@ -90,7 +96,9 @@ function resetBoard() {
     
     // This hides the "X/O is the winner" header that appears when a player wins
     document.getElementById("winnerOfGameHeaderX").style.display = "none";
-    document.getElementById("winnerOfGameHeaderO").style.display = "none";
+	document.getElementById("winnerOfGameHeaderO").style.display = "none";
+	document.getElementById("itsADraw").style.display = "none";
+
     // Re-instates user interactivity on the board
     document.getElementById("game").style.pointerEvents = "auto";
 
@@ -102,7 +110,8 @@ function checkWinner() {
         if((board[1] != "Empty") && (board[1] === board[0])){
             if((board[2] != "Empty") && (board[2] === board[1])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -111,7 +120,8 @@ function checkWinner() {
         if((board[3] != "Empty") && (board[3] === board[0])){
             if((board[6] != "Empty") && (board[3] === board[6])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -120,7 +130,8 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[0])){
             if((board[8] != "Empty") && (board[4] === board[8])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -129,7 +140,8 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[1])){
             if((board[7] != "Empty") && (board[4] === board[7])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -138,7 +150,8 @@ function checkWinner() {
         if((board[5] != "Empty") && (board[5] === board[2])){
             if((board[8] != "Empty") && (board[5] === board[8])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -147,7 +160,8 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[2])){
             if((board[6] != "Empty") && (board[4] === board[6])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -156,7 +170,8 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[3])){
             if((board[5] != "Empty") && (board[4] === board[5])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
     }
@@ -165,10 +180,35 @@ function checkWinner() {
         if((board[7] != "Empty") && (board[7] === board[6])){
             if((board[8] != "Empty") && (board[7] === board[8])){
                 winner = currentPlayer
-                console.log(winner);
+				console.log(winner);
+				addScore();
             }
         }
-    }
+	}
+}
+
+function checkIfDraw() {
+	let draw = board.includes("Empty")
+	if(draw === false) {
+		document.getElementById("itsADraw").style.display = "block"
+		setTimeout(function() {
+		// Resets the board after 5 seconds
+		resetBoard();
+		}, 5000);
+
+	}
+}
+
+function addScore() {
+	if (winner === "X") {
+		scoreX = scoreX + 1
+		console.log("scoreX is" + scoreX)
+	}
+	else if (winner === "O") {
+		scoreO = scoreO + 1
+		console.log("scoreO is" + scoreO)
+	}
+	return 
 }
 
 
@@ -183,6 +223,30 @@ function checkWinner() {
 //      [4, 5, 6] 345 - done
 //     [7, 8, 9], 678 - done
 // ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Confetti.js - downloaded from https://www.cssscript.com/confetti-falling-animation/
