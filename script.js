@@ -1,10 +1,10 @@
+// Naughts and Crosses Javascript 
+
+// Original code for the function below - not going to use but helpful to see
 // function place(box) {
 //     alert("You clicked here!");
 //     }
 
-
-
-// Original code for the function below - not going to use but helpful to see
 // When clicked, the box will display an X or an O
 // function place(box) {
 //     box.innerText = currentPlayer;
@@ -187,26 +187,31 @@ function checkWinner() {
 	}
 }
 
+
+// Function checks if the board includes the string "Empty". It is true until the board is full and then becomes false. False = draw.
 function checkIfDraw() {
 	let draw = board.includes("Empty")
 	if(draw === false) {
+		// Display's the message that the result is a draw
 		document.getElementById("itsADraw").style.display = "block"
 		setTimeout(function() {
 		// Resets the board after 5 seconds
 		resetBoard();
 		}, 5000);
-
 	}
 }
 
 function addScore() {
 	if (winner === "X") {
 		scoreX = scoreX + 1
-		console.log("scoreX is" + scoreX)
+		// console.log("scoreX is " + scoreX)
+		document.getElementById("scoreX").innerHTML = "X points: " + scoreX
 	}
 	else if (winner === "O") {
 		scoreO = scoreO + 1
-		console.log("scoreO is" + scoreO)
+		// console.log("scoreO is " + scoreO)
+		document.getElementById("scoreO").innerHTML = "O points: " + scoreO
+
 	}
 	return 
 }
@@ -220,7 +225,7 @@ function addScore() {
 //     [2, 5, 8], 147 - done
 //     [3, 6, 9], 258 - done
 //     [3, 5, 7], 246 - done
-//      [4, 5, 6] 345 - done
+//     [4, 5, 6], 345 - done
 //     [7, 8, 9], 678 - done
 // ];
 

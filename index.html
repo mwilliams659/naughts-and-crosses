@@ -7,10 +7,17 @@
     <title>Naughts and Crosses</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <h1>The Naughts and Crosses Championships</h1>
-    <div id="game" class="box">
+    <div id="scoreboard container">
+        <!-- <i class="fa fa-refresh" style="font-size:36px"></i> -->
+        <div id="scoreO" class="pointsbox container">O points:</div>
+        <div id="scoreX" class="pointsbox container">X points:</div>
+    </div>
+    <br>
+    <div id="game" class="box container">
         <div class="row">
             <!-- First Column -->
             <div id="0" onclick="place(this)"></div>
