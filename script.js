@@ -30,14 +30,23 @@ function place(box) {
     box.innerText = currentPlayer;
     // updates the board
     board[boxId] = currentPlayer;
-    console.log(board);
+	console.log(board);
+	console.log(currentPlayer);
  
     checkWinner();
 	announceWinner();
+
+	// if (!announceWinner) {
+	// 	announceWinner = false {
+	// 		checkIfDraw();
+	// 	}
+
+	// }
 	checkIfDraw();
 	
     // The next turn changes to the next player after first player plays
-    currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+	currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+	highlightNextPlayer();
 
 };
 
@@ -203,19 +212,34 @@ function checkIfDraw() {
 
 function addScore() {
 	if (winner === "X") {
-		scoreX = scoreX + 1
+		scoreX = scoreX + 1;
 		// console.log("scoreX is " + scoreX)
-		document.getElementById("scoreX").innerHTML = "X points: " + scoreX
+		document.getElementById("scoreX").innerHTML = "X points: " + scoreX;
 	}
 	else if (winner === "O") {
-		scoreO = scoreO + 1
+		scoreO = scoreO + 1;
 		// console.log("scoreO is " + scoreO)
-		document.getElementById("scoreO").innerHTML = "O points: " + scoreO
+		document.getElementById("scoreO").innerHTML = "O points: " + scoreO;
 
 	}
 	return 
 }
 
+// This function highlights which player's turn it is next by highlighting the score green and the other player's will be white
+function highlightNextPlayer() {
+	if (currentPlayer === "O") {
+		document.getElementById("scoreO").style.borderColor = "#26ec0f";
+		document.getElementById("scoreO").style.color = "#26ec0f";
+		document.getElementById("scoreX").style.borderColor = "white";
+		document.getElementById("scoreX").style.color = "white";
+		}
+	else if (currentPlayer === "X") {
+		document.getElementById("scoreX").style.borderColor = "#26ec0f";
+		document.getElementById("scoreX").style.color = "#26ec0f";
+		document.getElementById("scoreO").style.borderColor = "white";
+		document.getElementById("scoreO").style.color = "white";
+		}
+	}
 
 // const winningCombinations = [
     
