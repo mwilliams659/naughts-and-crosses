@@ -33,16 +33,13 @@ function place(box) {
 	console.log(board);
 	console.log(currentPlayer);
  
-    checkWinner();
-	announceWinner();
+	checkWinner();
+	//  rename this constant
 
-	// if (!announceWinner) {
-	// 	announceWinner = false {
-	// 		checkIfDraw();
-	// 	}
-
-	// }
-	checkIfDraw();
+	if (!announceWinner()) {
+		console.log("no winner")
+		checkIfDraw();
+	}
 	
     // The next turn changes to the next player after first player plays
 	currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
@@ -61,7 +58,8 @@ function announceWinner() {
         setTimeout(function() {
         // Resets the board after 5 seconds
         resetBoard();
-        }, 5000);
+		}, 5000);
+		return true;
     }
     if (winner === "O") {
         // Displays header showing the winner of the game
@@ -73,7 +71,8 @@ function announceWinner() {
         setTimeout(function() {
         // Resets the board after 5 seconds
         resetBoard();
-        }, 5000);
+		}, 5000);
+		return true;
     }
 }
 
