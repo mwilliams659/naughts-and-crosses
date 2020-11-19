@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1>The Naughts and Crosses Championships</h1>
-    <div id="scoreboard container">
-        <!-- <i class="fa fa-refresh" style="font-size:36px"></i> -->
+    <h1 class="animate__animated animate__zoomIn">The Naughts and Crosses Championships 
+        <button class="btn"><i class="fa fa-refresh" type="Reset" style="font-size:48px" id="resetIcon" onclick="resetGame()" title="Reset Game"></i></button>
+    </h1>
+    <div id="scoreboard" class="container animate__animated animate__zoomIn">
         <div id="scoreO" class="pointsbox container">O points:</div>
         <div id="scoreX" class="pointsbox container">X points:</div>
     </div>
@@ -38,9 +39,9 @@
 
         </div>
     </div>
-    <div id="endgame">
-        <h1 id="winnerOfGameHeaderX" class="animate_animated animate__flip" style="display: none">X IS THE WINNER!</h1>
-        <h1 id="winnerOfGameHeaderO" class="animate_animated animate__flip" style="display: none">O IS THE WINNER!</h1>
+    <div id="endgame" class="result-container">
+        <h1 id="winnerOfGameHeaderX" class="animate__animated animate__flash" style="display: none">X IS THE WINNER!</h1>
+        <h1 id="winnerOfGameHeaderO" class="animate__animated animate__flash" style="display: none">O IS THE WINNER!</h1>
         <h1 id="itsADraw" style="display: none">IT'S A DRAW</h1>
     </div>
     <script src="script.js"></script>

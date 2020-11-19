@@ -34,8 +34,7 @@ function place(box) {
 	console.log(currentPlayer);
  
 	checkWinner();
-	//  rename this constant
-
+	// If the winner is not announced, this function checks if there has been a draw 
 	if (!announceWinner()) {
 		console.log("no winner")
 		checkIfDraw();
@@ -107,9 +106,14 @@ function resetBoard() {
 	document.getElementById("winnerOfGameHeaderO").style.display = "none";
 	document.getElementById("itsADraw").style.display = "none";
 
-    // Re-instates user interactivity on the board
+    // Re-instates user interactivity on the board once the board reloads after a player wins
     document.getElementById("game").style.pointerEvents = "auto";
 
+}
+
+// This resets the whole game including points by reloading the page
+function resetGame() {
+	location.reload();
 }
 
 function checkWinner() {
