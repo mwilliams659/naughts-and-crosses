@@ -9,40 +9,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <h1 class="animate__animated animate__zoomIn">The Naughts and Crosses Championships 
-        <button class="btn"><i class="fa fa-refresh" type="Reset" style="font-size:48px" id="resetIcon" onclick="resetGame()" title="Reset Game"></i></button>
-    </h1>
-    <div id="scoreboard" class="container animate__animated animate__zoomIn">
-        <div id="scoreO" class="pointsbox container">O points:</div>
-        <div id="scoreX" class="pointsbox container">X points:</div>
-    </div>
-    <br>
-    <div id="game" class="box container">
-        <div class="row">
-            <!-- First Column -->
-            <div id="0" onclick="place(this)"></div>
-            <div id="1" onclick="place(this)"></div>
-            <div id="2" onclick="place(this)"></div>
+<body class="animate__animated animate__zoomIn">
+    <div class="game container">
+        <h1 class="animate__animated animate__zoomIn">The Naughts and Crosses Championships</h1>
+        <div id="scoreboard" class="container">
+            <div id="scoreO" class="pointsbox container">O points:</div>
+            <div id="scoreX" class="pointsbox container">X points:</div>
         </div>
-        <div class="row">
-            <!-- Second Column -->
-            <div id="3" onclick="place(this)"></div>
-            <div id="4" onclick="place(this)"></div>
-            <div id="5" onclick="place(this)"></div>
-        </div>
-        <div class="row">
-            <!-- Third Column -->
-            <div id="6" onclick="place(this)"></div>
-            <div id="7" onclick="place(this)"></div>
-            <div id="8" onclick="place(this)"></div>
+        <br>
+        <div id="game" class="box container">
+            <div class="row">
+                <!-- First Column -->
+                <div id="0" onclick="place(this)"></div>
+                <div id="1" onclick="place(this)"></div>
+                <div id="2" onclick="place(this)"></div>
+            </div>
+            <div class="row">
+                <!-- Second Column -->
+                <div id="3" onclick="place(this)"></div>
+                <div id="4" onclick="place(this)"></div>
+                <div id="5" onclick="place(this)"></div>
+            </div>
+            <div class="row">
+                <!-- Third Column -->
+                <div id="6" onclick="place(this)"></div>
+                <div id="7" onclick="place(this)"></div>
+                <div id="8" onclick="place(this)"></div>
 
+            </div>
         </div>
-    </div>
-    <div id="endgame" class="result-container">
-        <h1 id="winnerOfGameHeaderX" class="animate__animated animate__flash" style="display: none">X IS THE WINNER!</h1>
-        <h1 id="winnerOfGameHeaderO" class="animate__animated animate__flash" style="display: none">O IS THE WINNER!</h1>
-        <h1 id="itsADraw" style="display: none" class="animate__animated animate__bounce">IT'S A DRAW - TRY AGAIN!</h1>
+        <div id="resetIcons" class="reset-container">
+            <button class="btn1" type="Reset" id="resetBoardIcon" onclick="resetBoard()" title="Reset Board"><i class="fa fa-refresh"></i> reset board</button>
+            <button class="btn2" type="Reset" id="resetGameIcon" onclick="resetGame()" title="New Game"><i class="fa fa-refresh"></i> reset points</button>
+        </div>  
+        <div id="endgame" class="result-container">
+            <h1 id="winnerOfGameHeaderX" class="animate__animated animate__flash" style="display: none">X IS THE WINNER!</h1>
+            <h1 id="winnerOfGameHeaderO" class="animate__animated animate__flash" style="display: none">O IS THE WINNER!</h1>
+            <h1 id="itsADraw" style="display: none" class="animate__animated animate__bounce">IT'S A DRAW - TRY AGAIN!</h1>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

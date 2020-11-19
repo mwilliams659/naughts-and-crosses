@@ -11,16 +11,41 @@ body {
     font-weight: bold;
 }
 
-.btn {
+i {
+    font-size: 20px;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.btn1 {
     display: block;
     position: absolute;
-    right: 230px;
+    right: 130px;
     padding: 0;
     border: none;
     background: none;
+    margin-top: -100px;
 }
 
-.btn:hover {
+.btn2 {
+    display: block;
+    position: absolute;
+    right: 128px;
+    padding: 0;
+    border: none;
+    background: none;
+    margin-top: -50px;
+}
+
+.btn1:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.btn2:hover {
     cursor: pointer;
     color: white;
 }
@@ -28,7 +53,7 @@ body {
 #scoreX {
     /* float: left; */
     position: absolute;
-    margin-top: 80px;
+    margin-top: 120px;
     right: 100px;
     width: 150px;
     border: 3px solid white;
@@ -40,7 +65,7 @@ body {
 #scoreO {
     /* float: right; */
     position: absolute;
-    margin-top: 80px;
+    margin-top: 120px;
     left: 100px;
     width: 150px;
     border: 3px solid white;
@@ -87,65 +112,3 @@ h1 {
 .animate__animated.animate__flash {
    animation-duration: 3s;
 }
-
-/* 
-@media screen and (max-width: 600px) {
-    .row div {
-        padding: 20px;
-        border: 8px solid white;
-        height: 50px;
-        width: 50px;
-        color: white;
-        background-color: linear-gradient(to right, rgb(141, 6, 178), rgb(183, 158, 194));;
-        border-radius: 1px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        font-size: 50px;    
-    }
-    
-    .row {
-        clear: both;
-    }
-
-    #scoreX {
-        float: left;
-        left: 15px;
-        width: 90px;
-        border: 3px solid white;
-        padding: 10px;
-        border-radius: 5rem;
-
-    }
-
-    #scoreO {
-        float: right;
-        right: 150px;
-        width: 90px;
-        border: 3px solid white;
-        padding: 10px;
-        border-radius: 5rem;
-    }
-
-    #game {
-      width: 95%;
-      height: 580px;
-      font-size: 20px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    #scoreboard {
-      margin: 50px 0 25px 25px;
-    }
-  
-    /* .far {
-      margin-right: 20px;
-    }
-  
-    .reset-icon {
-      margin-top: 25px;
-      margin-left: 25px;
-    } */
-  /* }

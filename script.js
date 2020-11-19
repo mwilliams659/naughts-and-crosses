@@ -57,7 +57,7 @@ function announceWinner() {
         setTimeout(function() {
         // Resets the board after 5 seconds
         resetBoard();
-		}, 5000);
+		}, 3000);
 		return true;
     }
     if (winner === "O") {
@@ -70,7 +70,7 @@ function announceWinner() {
         setTimeout(function() {
         // Resets the board after 5 seconds
         resetBoard();
-		}, 5000);
+		}, 3000);
 		return true;
     }
 }
@@ -209,7 +209,7 @@ function checkIfDraw() {
 		setTimeout(function() {
 		// Resets the board after 5 seconds
 		resetBoard();
-		}, 5000);
+		}, 2000);
 	}
 }
 
