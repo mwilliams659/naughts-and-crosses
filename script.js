@@ -48,8 +48,10 @@ function place(box) {
 
 function announceWinner() {
     if (winner === "X") {
+		// Sound effect for win
+		document.getElementById("win-mp3").play();
         // Displays header showing the winner of the game
-        document.getElementById("winnerOfGameHeaderX").style.display = "block"
+		document.getElementById("winnerOfGameHeaderX").style.display = "block";
         // Starts the confetti
         startConfetti();
         // Removes user interactivity on the board whilst the winner is announced
@@ -61,8 +63,10 @@ function announceWinner() {
 		return true;
     }
     if (winner === "O") {
-        // Displays header showing the winner of the game
-        document.getElementById("winnerOfGameHeaderO").style.display = "block"
+		// Sound effect for win
+		document.getElementById("win-mp3").play();
+		// Displays header showing the winner of the game
+		document.getElementById("winnerOfGameHeaderO").style.display = "block";
         // Starts the confetti
         startConfetti();
         // Removes user interactivity on the board whilst the winner is announced
@@ -204,8 +208,10 @@ function checkWinner() {
 function checkIfDraw() {
 	let draw = board.includes("Empty")
 	if(draw === false) {
+		// Sound effect for draw
+		document.getElementById("draw-mp3").play();
 		// Display's the message that the result is a draw
-		document.getElementById("itsADraw").style.display = "block"
+		document.getElementById("itsADraw").style.display = "block";
 		setTimeout(function() {
 		// Resets the board after 5 seconds
 		resetBoard();
