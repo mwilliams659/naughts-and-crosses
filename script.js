@@ -83,25 +83,12 @@ function announceWinner() {
 // This removes all the innerHTML inputs that were used in the game and leaves the boxes blank
 function resetBoard() {
     // Stops the confetti animation
-    stopConfetti();
-    box = document.getElementById("0");
-    box.innerText = "";
-    box = document.getElementById("1");
-    box.innerText = "";
-    box = document.getElementById("2");
-    box.innerText = "";
-    box = document.getElementById("3");
-    box.innerText = "";
-    box = document.getElementById("4");
-    box.innerText = "";
-    box = document.getElementById("5");
-    box.innerText = "";
-    box = document.getElementById("6");
-    box.innerText = "";
-    box = document.getElementById("7");
-    box.innerText = "";
-    box = document.getElementById("8");
-    box.innerText = "";
+	stopConfetti();
+	const list = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+	for(item in list){
+		box = document.getElementById(item);
+		box.innerText = "";
+	}
     winner = "None";
     board = ["Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty","Empty"];
     
