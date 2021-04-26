@@ -214,17 +214,6 @@ function highlightNextPlayer() {
 
 
 
-// const winningCombinations = [
-    
-//     [1, 2, 3], 012 - done
-//     [1, 4, 7], 036 - done
-//     [1, 5, 9], 048 - done
-//     [2, 5, 8], 147 - done
-//     [3, 6, 9], 258 - done
-//     [3, 5, 7], 246 - done
-//     [4, 5, 6], 345 - done
-//     [7, 8, 9], 678 - done
-// ];
 
 
 
