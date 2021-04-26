@@ -1,19 +1,5 @@
-// Naughts and Crosses Javascript 
+// Noughts and Crosses Javascript 
 
-// Original code for the function below - not going to use but helpful to see
-// function place(box) {
-//     alert("You clicked here!");
-//     }
-
-// When clicked, the box will display an X or an O
-// function place(box) {
-//     box.innerText = currentPlayer;
-//     if (currentPlayer == "O") {
-//         currentPlayer = "X";
-//     } else {
-//         currentPlayer = "O"
-//     }
-// }
 
 var currentPlayer = "O";
 // this is the state of play
@@ -30,13 +16,10 @@ function place(box) {
     box.innerText = currentPlayer;
     // updates the board
     board[boxId] = currentPlayer;
-	console.log(board);
-	console.log(currentPlayer);
  
 	checkWinner();
 	// If the winner is not announced, this function checks if there has been a draw 
 	if (!announceWinner()) {
-		console.log("no winner")
 		checkIfDraw();
 	}
 	
@@ -45,6 +28,7 @@ function place(box) {
 	highlightNextPlayer();
 
 };
+
 
 function announceWinner() {
     if (winner === "X") {
@@ -113,7 +97,6 @@ function checkWinner() {
         if((board[1] != "Empty") && (board[1] === board[0])){
             if((board[2] != "Empty") && (board[2] === board[1])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -123,7 +106,6 @@ function checkWinner() {
         if((board[3] != "Empty") && (board[3] === board[0])){
             if((board[6] != "Empty") && (board[3] === board[6])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -133,7 +115,6 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[0])){
             if((board[8] != "Empty") && (board[4] === board[8])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -143,7 +124,6 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[1])){
             if((board[7] != "Empty") && (board[4] === board[7])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -153,7 +133,6 @@ function checkWinner() {
         if((board[5] != "Empty") && (board[5] === board[2])){
             if((board[8] != "Empty") && (board[5] === board[8])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -163,7 +142,6 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[2])){
             if((board[6] != "Empty") && (board[4] === board[6])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -173,7 +151,6 @@ function checkWinner() {
         if((board[4] != "Empty") && (board[4] === board[3])){
             if((board[5] != "Empty") && (board[4] === board[5])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -183,7 +160,6 @@ function checkWinner() {
         if((board[7] != "Empty") && (board[7] === board[6])){
             if((board[8] != "Empty") && (board[7] === board[8])){
                 winner = currentPlayer
-				console.log(winner);
 				addScore();
             }
         }
@@ -206,15 +182,14 @@ function checkIfDraw() {
 	}
 }
 
+// Adds points to the scoreboards
 function addScore() {
 	if (winner === "X") {
 		scoreX = scoreX + 1;
-		// console.log("scoreX is " + scoreX)
 		document.getElementById("scoreX").innerHTML = "X points: " + scoreX;
 	}
 	else if (winner === "O") {
 		scoreO = scoreO + 1;
-		// console.log("scoreO is " + scoreO)
 		document.getElementById("scoreO").innerHTML = "O points: " + scoreO;
 
 	}
@@ -236,6 +211,8 @@ function highlightNextPlayer() {
 		document.getElementById("scoreO").style.color = "white";
 		}
 	}
+
+
 
 // const winningCombinations = [
     
