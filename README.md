@@ -6,3 +6,4 @@ A web page that displays my take on the classic noughts & crosses/tic-tac-toe ga
 
 Clone this repository onto your machine.
 
+Load the HTML file in your chosen browser.
