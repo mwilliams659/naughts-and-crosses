@@ -1,12 +1,12 @@
 body {
-    /* background: linear-gradient(to right, rgb(141, 6, 178), rgb(183, 158, 194)); */
     background-image: linear-gradient(to right, #8d0694, #9827a3, #a43bb3, #af4ec2, #ba5fd2, #ba5fd2, #ba5fd2, #ba5fd2, #af4ec2, #a43bb3, #9827a3, #8d0694);
+    font-family: 'Press Start 2P', cursive;
 }
 
 
+
 .pointsbox {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
     color: white;
     font-weight: bold;
 }
@@ -16,28 +16,16 @@ i {
 }
 
 button {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
 }
 
-.btn1 {
-    display: block;
-    position: absolute;
-    right: 130px;
-    padding: 0;
-    border: none;
-    background: none;
-    margin-top: -100px;
-}
 
-.btn2 {
-    display: block;
-    position: absolute;
-    right: 128px;
-    padding: 0;
-    border: none;
+.btn1, .btn2 {
+    width: 100%;
     background: none;
-    margin-top: -50px;
+    text-align: left;
+    border-radius: 2px;
 }
 
 .btn1:hover {
@@ -51,7 +39,6 @@ button {
 }
 
 #scoreX {
-    /* float: left; */
     position: absolute;
     margin-top: 120px;
     right: 100px;
@@ -63,7 +50,6 @@ button {
 
 
 #scoreO {
-    /* float: right; */
     position: absolute;
     margin-top: 120px;
     left: 100px;
@@ -102,7 +88,7 @@ button {
 
 h1 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
 }
 
 .result-container {
@@ -111,4 +97,15 @@ h1 {
 
 .animate__animated.animate__flash {
    animation-duration: 3s;
+}
+
+.reset-container {
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:-60px; 
+    min-height:40px;
+    text-align: left;
 }
